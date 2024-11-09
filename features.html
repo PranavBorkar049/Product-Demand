@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Results</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-sm navbar-light fixed-top" style="background-color: darkgray;">
+    <ul class="navbar-nav mr-auto">
+      <li>
+        <a class="navbar-brand" href="/"><img src="./static/images/logo.png" alt="Logo" style="height:40px;"></a>
+      </li>
+      <li class="navbar-brand">Welcome {{ user }}</li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+      <form class="form-inline ml-2">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" id="Search">
+      </form>
+      <button class="btn btn-primary" onclick="find_text()">Search</button>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+   <br>
+   <br>
+   <br>
+   <div class="container mt-5">
+    <h2>Feature Analysis</h2>
+
+    <h4>Data Overview</h4>
+    <p>This section displays the preprocessed dataset and some initial visualizations.</p>
+    
+    <h4>Sample Data Visualization</h4>
+    <img src="data:image/png;base64,{{ plot_url }}" alt="Plot" class="img-fluid"/>
+
+    <h4>Data Details</h4>
+    <p>Below are the fields used in the analysis:</p>
+    <ul>
+        <li><strong>Product Code</strong>: Unique identifier for each product.</li>
+        <li><strong>Warehouse</strong>: Location of storage for each product.</li>
+        <li><strong>Product Category</strong>: Category to which the product belongs.</li>
+        <li><strong>Date</strong>: Date of the recorded demand.</li>
+    </ul>
+
+    <a href="/" class="btn btn-primary mt-3">Go Back</a>
+</div>
+
+</body>
+</html>
