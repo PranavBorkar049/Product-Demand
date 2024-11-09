@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Results</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-sm navbar-light fixed-top" style="background-color: darkgray;">
+    <ul class="navbar-nav mr-auto">
+      <li>
+        <a class="navbar-brand" href="/"><img src="./static/images/logo.png" alt="Logo" style="height:40px;"></a>
+      </li>
+      <li class="navbar-brand">Welcome {{ user }}</li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+      <form class="form-inline ml-2">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" id="Search">
+      </form>
+      <button class="btn btn-primary" onclick="find_text()">Search</button>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+   <br>
+   <br>
+   <br>
+  <div class="container mt-5">
+    <h2>Model Results</h2>
+    <p>R-Squared Score: <strong>{{ r_sq }}</strong></p>
+
+    <!-- Render the Plot -->
+    <h4>Actual vs Predicted Sales</h4>
+    <img src="data:image/png;base64,{{ plot_url }}" alt="Plot" class="img-fluid"/>
+
+    <a href="/" class="btn btn-primary mt-3">Go Back</a>
+  </div>
+
+</body>
+</html>

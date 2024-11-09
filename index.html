@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FDFP with ML</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="./static/images/favicon.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="./static/scripts/index.js"></script>
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      background-image: url('./static/images/background.jpg'); /* Path to your background image */
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+    }
+    .form-control {
+      border: 1px solid #0068d0;
+    }
+    .container {
+      margin-top: 100px;
+      background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-sm navbar-light fixed-top" style="background-color: darkgray;">
+    <ul class="navbar-nav mr-auto">
+      <li>
+        <a class="navbar-brand" href="/"><img src="./static/images/logo.png" alt="Logo" style="height:40px;"></a>
+      </li>
+      <li class="navbar-brand">Welcome {{user}}</li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+      <form class="form-inline ml-2">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" id="Search">
+      </form>
+      <button class="btn btn-primary" onclick="find_text()">Search</button>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2>Upload CSV and Image</h2>
+    <br>
+    <img src="./static/images/test5.jpg" alt="Upload Image" class="static-image" style="width: 500px;height: 300px;margin-left: 300px;"> 
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="csv_file">Select CSV File:</label>
+        <input type="file" class="form-control-file" id="csv_file" name="csv_file" required>
+      </div>
+      
+      <button type="submit" class="btn btn-primary btn-block">Upload</button>
+    </form>
+  </div>
+
+</body>
+</html>
